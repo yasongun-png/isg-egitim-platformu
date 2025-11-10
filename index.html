@@ -1,0 +1,52 @@
+<!doctype html>
+<html lang="tr">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>İSG Eğitim Platformu – Giriş</title>
+  <link rel="stylesheet" href="css/styles.css" />
+
+  <!-- SADECE BU 3 ADET SDK YETERLİ -->
+  <script src="https://www.gstatic.com/firebasejs/9.22.2/firebase-app-compat.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/9.22.2/firebase-firestore-compat.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/9.22.2/firebase-auth-compat.js"></script>
+
+  <!-- Firebase ayar dosyan -->
+  <script src="js/firebase.js"></script>
+
+  <!-- Giriş/Kayıt işlemlerini yöneten dosya -->
+  <script src="js/auth.js"></script>
+</head>
+<body>
+  <div class="container">
+    <div class="header">
+      <div class="h1">İSG Eğitim Platformu</div>
+      <div class="sub">Temel Eğitim Modülleri</div>
+    </div>
+
+    <div class="card">
+      <h2>Giriş</h2>
+      <form onsubmit="event.preventDefault(); handleLogin(this)">
+        <div class="row">
+          <div class="col"><label>Sicil No<br><input class="input" name="employeeId" required></label></div>
+          <div class="col"><label>Şifre<br><input class="input" type="password" name="password" required></label></div>
+        </div>
+        <div style="margin-top:12px"><button class="btn">Giriş Yap</button></div>
+      </form>
+    </div>
+
+    <div class="card">
+      <h2>Kayıt Ol</h2>
+      <form onsubmit="event.preventDefault(); handleRegister(this)">
+        <div class="row">
+          <div class="col"><label>Ad Soyad<br><input class="input" name="fullName" required></label></div>
+          <div class="col"><label>Sicil No<br><input class="input" name="employeeId" required></label></div>
+          <div class="col"><label>Şifre<br><input class="input" type="password" name="password" required></label></div>
+        </div>
+        <div style="margin-top:12px"><button class="btn">Kayıt Ol</button></div>
+      </form>
+      <p class="notice">Not: Kurumsal kullanım içindir.</p>
+    </div>
+  </div>
+</body>
+</html>
